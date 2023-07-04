@@ -28,5 +28,10 @@ public class CommentController {
         createCommentService.addComment(request, boardId);
     }
 
-    
+    @Operation(summary = "댓글 삭제")
+    @DeleteMapping("/delete")
+    public void deleteComment(@PathVariable Long boardId, @PathVariable Long commentId){
+        deleteCommentService.deleteComment(boardId, commentId);
+    }
+
 }
