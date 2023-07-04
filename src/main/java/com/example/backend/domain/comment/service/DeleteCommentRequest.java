@@ -1,7 +1,6 @@
 package com.example.backend.domain.comment.service;
 
 import com.example.backend.domain.board.domain.Board;
-import com.example.backend.domain.board.domain.repository.BoardRepository;
 import com.example.backend.domain.board.facade.BoardFacade;
 import com.example.backend.domain.comment.domain.Comment;
 import com.example.backend.domain.comment.domain.repository.CommentRepository;
@@ -21,7 +20,6 @@ public class DeleteCommentRequest {
     private final BoardFacade boardFacade;
     private final UserFacade userFacade;
     private final CommentFacade commentFacade;
-    private final BoardRepository boardRepository;
     private final CommentRepository commentRepository;
 
     @Transactional
