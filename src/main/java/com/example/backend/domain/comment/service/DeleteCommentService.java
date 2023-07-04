@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteCommentRequest {
+public class DeleteCommentService {
 
     private final BoardFacade boardFacade;
     private final UserFacade userFacade;
@@ -23,7 +23,7 @@ public class DeleteCommentRequest {
     private final CommentRepository commentRepository;
 
     @Transactional
-    public void deleteComment(Long boardId, Long commentId){
+    public void commentDelete(Long boardId, Long commentId){
 
         User user = userFacade.getCurrentUser();
         Board board = boardFacade.getBoardById(boardId);
