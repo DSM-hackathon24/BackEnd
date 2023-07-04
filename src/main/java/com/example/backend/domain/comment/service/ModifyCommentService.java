@@ -24,7 +24,7 @@ public class ModifyCommentService {
     private final CommentRepository commentRepository;
 
     @Transactional
-    public void modifyComment(CommentRequest request, Long boardId, Long commentId){
+    public void commentModify(CommentRequest request, Long boardId, Long commentId){
 
         User user = userFacade.getCurrentUser();
         Board board = boardFacade.getBoardById(boardId);
