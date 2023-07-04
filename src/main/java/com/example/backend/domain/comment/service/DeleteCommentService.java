@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteCommentRequest {
+public class DeleteCommentService {
 
     private final BoardFacade boardFacade;
     private final UserFacade userFacade;
