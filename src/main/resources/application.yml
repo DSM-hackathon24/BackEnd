@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: {MySQL_URL}
+    username: {MySQL_UserName}
+    password: {MySQL_Password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      host: {Redis_host}
+      port: {Redis_port}
+
+  jwt:
+    key: {Jwt_key}
+    live:
+      atk: {Atk_Time}
+      rtk: {Rtk_Time}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+cloud:
+  aws:
+    credentials:
+      accessKey: {Aws_AccessKey}
+      secretKey: {Aws_SecretKey}
+    s3:
+      bucket: {Aws_bucket}
+      dir: {Aws_image}
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+
+
