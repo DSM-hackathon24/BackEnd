@@ -53,7 +53,7 @@ public class SecurityConfig {
 
                 .antMatchers("/.well-known/acme-challenge/**").permitAll()
 
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
 
                 .and()
 
