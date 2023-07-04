@@ -20,7 +20,7 @@ public class CreateCommentService {
     private final CommentRepository commentRepository;
 
     @Transactional
-    public void addComment(CommentAddRequest request, Long boardId){
+    public void commentAdd(CommentAddRequest request, Long boardId){
 
         User user = userFacade.getCurrentUser();
         Board board = boardFacade.getBoardById(boardId);
