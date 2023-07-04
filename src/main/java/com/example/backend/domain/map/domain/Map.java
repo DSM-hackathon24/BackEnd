@@ -5,8 +5,10 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
@@ -14,10 +16,18 @@ import javax.persistence.Table;
 @Table(name = "map")
 public class Map extends BaseEntity {
 
-    private Integer longitude;
+    @NotBlank
+    private Double longitude;
 
-    private Integer latitude;
+    @NotBlank
+    private Double latitude;
 
-    private Boolean Availability;
+    @NotBlank
+    private Boolean availability;
 
+    @NotBlank
+    private String sortation;
+
+    @NotBlank
+    private String installation;
 }
