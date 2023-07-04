@@ -28,8 +28,8 @@ public class ListCommentService {
         return comments.stream()
                 .map(comment -> CommentListResponse.builder()
                         .commentId(comment.getId())
-                        .w(board.getTitle())
-                        .date(board.getCreatedAt())
+                        .writer(comment.getUser().getAccountId())
+                        .date(comment.getCreatedAt())
                         .build())
                 .toList();
     }
