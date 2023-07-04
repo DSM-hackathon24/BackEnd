@@ -10,5 +10,6 @@ import java.time.LocalDate;
 public class CommentListResponse {
     private Long commentId;
     private String comment;
+    private String writer;
     private LocalDate date;
 }
