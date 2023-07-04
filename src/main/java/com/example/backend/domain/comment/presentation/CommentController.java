@@ -1,7 +1,7 @@
 package com.example.backend.domain.comment.presentation;
 
-import com.example.backend.domain.comment.domain.Comment;
 import com.example.backend.domain.comment.presentation.dto.request.CommentAddRequest;
+import com.example.backend.domain.comment.presentation.dto.request.CommentRequest;
 import com.example.backend.domain.comment.presentation.dto.response.CommentListResponse;
 import com.example.backend.domain.comment.service.CreateCommentService;
 import com.example.backend.domain.comment.service.DeleteCommentService;
@@ -28,7 +28,7 @@ public class CommentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void createComment(@RequestBody CommentAddRequest request, Long boardId){
-        createCommentService.addComment(request, boardId);
+        createCommentService.commentAdd(request, boardId);
     }
 
     @Operation(summary = "댓글 삭제")
@@ -41,6 +41,12 @@ public class CommentController {
     @GetMapping("/list")
     public List<CommentListResponse> listComment(){
         return listCommentService.commentList();
+    }
+
+    @Operation(summary = "댓글 수정")
+    @PutMapping("/modify")
+    public void modifyComment(@RequestBody CommentRequest request, @PathVariable Long boardId, @PathVariable Long commentId){
+        modifyCommentService.commentModify(request, boardId, commentId);
     }
 
 }
