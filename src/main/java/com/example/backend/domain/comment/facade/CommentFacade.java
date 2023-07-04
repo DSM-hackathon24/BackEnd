@@ -13,7 +13,7 @@ public class CommentFacade {
 
     private final CommentRepository commentRepository;
 
-    public Comment getBoardById(Long id){
+    public Comment getCommentById(Long id){
         return commentRepository.findByCommentId(id)
                 .orElseThrow(() -> new CustomException(ErrorCode.BOARD_NOT_FOUND));
     }
