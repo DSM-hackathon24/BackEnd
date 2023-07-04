@@ -23,7 +23,7 @@ public class DeleteCommentService {
     private final CommentRepository commentRepository;
 
     @Transactional
-    public void deleteComment(Long boardId, Long commentId){
+    public void commentDelete(Long boardId, Long commentId){
 
         User user = userFacade.getCurrentUser();
         Board board = boardFacade.getBoardById(boardId);
