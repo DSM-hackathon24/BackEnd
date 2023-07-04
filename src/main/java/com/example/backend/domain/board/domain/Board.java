@@ -1,6 +1,7 @@
 package com.example.backend.domain.board.domain;
 
 import com.example.backend.domain.board.enums.Category;
+import com.example.backend.domain.comment.domain.Comment;
 import com.example.backend.domain.user.domain.User;
 import com.example.backend.global.entity.BaseEntity;
 import lombok.AccessLevel;
@@ -31,6 +32,9 @@ public class Board extends BaseEntity {
 
     @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE)
     private List<BoardImage> boardImages;
+
+    @OneToMany(mappedBy = "comment", cascade = CascadeType.REMOVE)
+    private List<Comment> comments;
 
     @Builder
     public Board(String title, String content, User user, Category category) {
