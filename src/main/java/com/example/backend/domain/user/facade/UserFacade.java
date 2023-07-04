@@ -14,8 +14,8 @@ public class UserFacade {
     private final UserRepository userRepository;
 
     public User getCurrentUser() {
-        String accountId = SecurityContextHolder.getContext().getAuthentication().getName();
-        return getUserByAccountId(accountId);
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        return getUserByEmail(email);
     }
 
     public User getUserById(Long id){
@@ -23,8 +23,8 @@ public class UserFacade {
                 .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
 
     }
-    public User getUserByAccountId(String accountId) {
-        return userRepository.findUserByAccountId(accountId)
+    public User getUserByEmail(String email) {
+        return userRepository.findUserByEmail(email)
                 .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
     }
 
@@ -32,5 +32,10 @@ public class UserFacade {
         if(userRepository.existsByAccountId(accountId)){
             throw new CustomException(ErrorCode.EXIST_USER);
         }
+    }
+
+    public User getUserByAccountId(String accountId) {
+        return userRepository.findUserByAccountId(accountId)
+                .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
     }
 }

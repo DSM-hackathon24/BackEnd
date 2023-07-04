@@ -22,6 +22,8 @@ public class User extends BaseEntity {
 
     private String accountId; // 아이디
 
+    private String nickName; // 닉네임
+
     @Length(max = 68)
     private String password; // 비밀번호
 
@@ -32,9 +34,10 @@ public class User extends BaseEntity {
     private Role role;
 
     @Builder
-    public User(String email, String accountId, String password) {
+    public User(String email, String accountId, String nickName, String password) {
         this.email = email;
         this.accountId = accountId;
+        this.nickName = nickName;
         this.password = password;
         this.profile = DefaultImage.USER_PROFILE_IMAGE;
         this.role = Role.ROLE_USER;
