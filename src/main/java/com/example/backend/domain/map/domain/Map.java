@@ -2,6 +2,7 @@ package com.example.backend.domain.map.domain;
 
 import com.example.backend.global.entity.BaseEntity;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,7 +24,7 @@ public class Map extends BaseEntity {
     private Double latitude;
 
     @NotBlank
-    private Boolean availability;
+    private Boolean availability = false;
 
     @NotBlank
     private String sortation;
@@ -31,6 +32,7 @@ public class Map extends BaseEntity {
     @NotBlank
     private String installation;
 
+    @Builder
     public Map(Double longitude, Double latitude, Boolean availability, String sortation, String installation){
         this.longitude = longitude;
         this.latitude = latitude;
