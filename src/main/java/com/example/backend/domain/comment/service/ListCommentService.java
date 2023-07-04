@@ -1,9 +1,6 @@
 package com.example.backend.domain.comment.service;
 
-import com.example.backend.domain.board.domain.Board;
-import com.example.backend.domain.board.presentation.dto.response.QueryBoardListResponse;
 import com.example.backend.domain.comment.domain.Comment;
-import com.example.backend.domain.comment.domain.repository.CommentRepository;
 import com.example.backend.domain.comment.facade.CommentFacade;
 import com.example.backend.domain.comment.presentation.dto.response.CommentListResponse;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +17,7 @@ public class ListCommentService {
     private final CommentFacade commentFacade;
 
     @Transactional(readOnly = true)
-    public List<CommentListResponse> execute() {
+    public List<CommentListResponse> commentList() {
 
         Sort sort = Sort.by(Sort.Direction.DESC, "id");
         List<Comment> comments = commentFacade.getCommentAllById(sort);

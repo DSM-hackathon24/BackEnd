@@ -2,6 +2,7 @@ package com.example.backend.domain.comment.presentation;
 
 import com.example.backend.domain.comment.domain.Comment;
 import com.example.backend.domain.comment.presentation.dto.request.CommentAddRequest;
+import com.example.backend.domain.comment.presentation.dto.response.CommentListResponse;
 import com.example.backend.domain.comment.service.CreateCommentService;
 import com.example.backend.domain.comment.service.DeleteCommentService;
 import com.example.backend.domain.comment.service.ListCommentService;
@@ -10,6 +11,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RequestMapping("/comment")
@@ -32,6 +35,12 @@ public class CommentController {
     @DeleteMapping("/delete")
     public void deleteComment(@PathVariable Long boardId, @PathVariable Long commentId){
         deleteCommentService.deleteComment(boardId, commentId);
+    }
+
+    @Operation(summary = "댓글 조회")
+    @GetMapping("/list")
+    public List<CommentListResponse> listComment(){
+        return listCommentService.commentList();
     }
 
 }
