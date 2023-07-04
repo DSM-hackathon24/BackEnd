@@ -30,4 +30,12 @@ public class Map extends BaseEntity {
 
     @NotBlank
     private String installation;
+
+    public Map(Double longitude, Double latitude, Boolean availability, String sortation, String installation){
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.availability = availability;
+        this.sortation = sortation;
+        this.installation = installation;
+    }
 }
