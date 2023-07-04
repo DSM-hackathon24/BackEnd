@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 public class MapAddRequest {
 
+
     private Double longitude;
 
     private Double latitude;
