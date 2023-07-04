@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
@@ -17,13 +18,13 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "map")
 public class Map extends BaseEntity {
 
-    @Column(nullable = false)
+    @NotNull
     private Double longitude;
 
-    @Column(nullable = false)
+    @NotNull
     private Double latitude;
 
-    @Column(nullable = false)
+    @NotNull
     private Boolean availability = false;
 
     @NotBlank
