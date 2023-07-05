@@ -23,4 +23,8 @@ public class BoardFacade {
     public List<Board> getBoardAllById(Sort sort){
         return boardRepository.findAll(sort);
     }
+
+    public List<Board> findAllBoardByTitleSearch(String kda) {
+        return boardRepository.findAllBoardByTitleSearch(kda);
+    }
 }
