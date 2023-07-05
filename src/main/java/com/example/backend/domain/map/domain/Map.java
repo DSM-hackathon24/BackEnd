@@ -33,7 +33,6 @@ public class Map extends BaseEntity {
     @NotBlank
     private String installation;
 
-    @NotBlank
     private String writer;
 
     @Builder
