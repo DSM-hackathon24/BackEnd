@@ -29,6 +29,7 @@ public class MapListService {
                 .sortation(map.getSortation())
                 .latitude(map.getLatitude())
                 .writer(map.getWriter())
+                .date(map.getCreatedAt())
                 .build();
     }
 }

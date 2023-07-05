@@ -30,6 +30,7 @@ public class MapAllLIstService {
                         .mapId(map.getId())
                         .latitude(map.getLatitude())
                         .longitude(map.getLongitude())
+                        .sortation(map.getSortation())
                         .build())
                 .toList();
     }

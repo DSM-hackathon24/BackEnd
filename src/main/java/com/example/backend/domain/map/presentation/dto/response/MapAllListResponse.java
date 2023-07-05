@@ -12,4 +12,6 @@ public class MapAllListResponse {
     private Double longitude;
 
     private Double latitude;
+
+    private String sortation;
 }
