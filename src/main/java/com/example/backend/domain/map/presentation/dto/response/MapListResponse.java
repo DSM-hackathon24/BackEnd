@@ -10,7 +10,7 @@ public class MapListResponse {
 
     private Double latitude;
 
-    private Boolean availability = false;
+    private Boolean availability;
 
     private String sortation;
 
