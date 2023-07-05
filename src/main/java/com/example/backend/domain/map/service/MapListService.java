@@ -28,7 +28,7 @@ public class MapListService {
                 .availability(map.getAvailability())
                 .sortation(map.getSortation())
                 .latitude(map.getLatitude())
-                .writer(user.getNickName())
+                .writer(map.getWriter())
                 .build();
     }
 }
