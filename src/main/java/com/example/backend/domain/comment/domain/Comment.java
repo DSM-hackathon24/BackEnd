@@ -20,6 +20,8 @@ public class Comment extends BaseEntity {
 
     private String comment;
 
+    private String writer;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -29,8 +31,9 @@ public class Comment extends BaseEntity {
     private Board board;
 
     @Builder
-    public Comment(String comment){
+    public Comment(String comment, String writer){
         this.comment = comment;
+        this.writer = writer;
     }
 
     public void update(String comment){
