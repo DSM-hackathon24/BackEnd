@@ -34,6 +34,7 @@ public class ListCommentService {
                 .filter(comment -> comment.getBoard().getId().equals(boardId))
                 .map(comment -> CommentListResponse.builder()
                         .commentId(comment.getId())
+                        .comment(comment.getComment())
                         .writer(user.getNickName())
                         .date(comment.getCreatedAt())
                         .build())

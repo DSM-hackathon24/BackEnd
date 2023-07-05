@@ -33,7 +33,7 @@ public class Board extends BaseEntity {
     @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE)
     private List<BoardImage> boardImages;
 
-    @OneToMany(mappedBy = "comment", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE)
     private List<Comment> comments;
 
     @Builder
