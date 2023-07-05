@@ -27,7 +27,7 @@ public class DeleteCommentService {
 
         User user = userFacade.getCurrentUser();
         Board board = boardFacade.getBoardById(boardId);
-        Comment comment = commentFacade.getCommentById(commentId);
+        Comment comment = commentFacade.findCommentById(commentId);
 
         if (!user.getEmail().equals(board.getUser().getEmail())) {
             throw new CustomException(ErrorCode.BOARD_NOT_FOUND);
