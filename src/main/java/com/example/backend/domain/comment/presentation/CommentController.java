@@ -26,13 +26,13 @@ public class CommentController {
 
     @Operation(summary = "댓글 생성")
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
+    @PostMapping("{boardId}")
     public void createComment(@RequestBody CommentAddRequest request, @PathVariable Long boardId){
         createCommentService.commentAdd(request, boardId);
     }
 
     @Operation(summary = "댓글 삭제")
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{boardId}/{commentId}")
     public void deleteComment(@PathVariable Long boardId, @PathVariable Long commentId){
         deleteCommentService.commentDelete(boardId, commentId);
     }
@@ -44,7 +44,7 @@ public class CommentController {
     }
 
     @Operation(summary = "댓글 수정")
-    @PutMapping("/modify")
+    @PutMapping("/modify/{boardId}/{commentId}")
     public void modifyComment(@RequestBody CommentRequest request, @PathVariable Long boardId, @PathVariable Long commentId){
         modifyCommentService.commentModify(request, boardId, commentId);
     }

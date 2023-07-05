@@ -29,6 +29,8 @@ public class CreateCommentService {
                 Comment.builder()
                         .writer(user.getNickName())
                         .comment(request.getComment())
+                        .board(board)
+                        .user(user)
                         .build());
     }
 }
