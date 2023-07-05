@@ -27,13 +27,15 @@ public class Comment extends BaseEntity {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "board_title", nullable = false)
+    @JoinColumn(name = "board_id", nullable = false)
     private Board board;
 
     @Builder
-    public Comment(String comment, String writer){
+    public Comment(String comment, String writer, Board board, User user){
         this.comment = comment;
         this.writer = writer;
+        this.board = board;
+        this.user = user;
     }
 
     public void update(String comment){
