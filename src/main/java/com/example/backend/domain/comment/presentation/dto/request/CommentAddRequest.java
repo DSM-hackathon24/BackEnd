@@ -7,4 +7,5 @@ import lombok.NoArgsConstructor;
 @Getter
 public class CommentAddRequest {
     private String comment;
+    private String writer;
 }
