@@ -28,6 +28,7 @@ public class MapController {
         mapAddService.addMap(request);
     }
 
+    @Operation(summary = "소화전 장소 조회")
     @GetMapping("/list/{mapId}")
     public MapListResponse mapList(@PathVariable Long mapId){
         return mapListService.mapList(mapId);

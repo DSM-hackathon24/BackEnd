@@ -17,8 +17,8 @@ public class CommentFacade {
 
     private final CommentRepository commentRepository;
 
-    public Comment getCommentById(Long id){
-        return commentRepository.findByCommentId(id)
+    public Comment findCommentById(Long id){
+        return commentRepository.findCommentById(id)
                 .orElseThrow(() -> new CustomException(ErrorCode.BOARD_NOT_FOUND));
     }
 

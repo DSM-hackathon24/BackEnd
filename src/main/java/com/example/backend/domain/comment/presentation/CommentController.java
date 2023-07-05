@@ -26,7 +26,7 @@ public class CommentController {
 
     @Operation(summary = "댓글 생성")
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
+    @PostMapping("/{boardId}")
     public void createComment(@RequestBody CommentAddRequest request, Long boardId){
         createCommentService.commentAdd(request, boardId);
     }
@@ -34,7 +34,7 @@ public class CommentController {
     @Operation(summary = "댓글 삭제")
     @DeleteMapping("/delete")
     public void deleteComment(@PathVariable Long boardId, @PathVariable Long commentId){
-        deleteCommentService.deleteComment(boardId, commentId);
+        deleteCommentService.commentDelete(boardId, commentId);
     }
 
     @Operation(summary = "댓글 조회")

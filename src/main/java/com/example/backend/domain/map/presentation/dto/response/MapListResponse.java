@@ -15,4 +15,6 @@ public class MapListResponse {
     private String sortation;
 
     private String installation;
+
+    private String writer;
 }

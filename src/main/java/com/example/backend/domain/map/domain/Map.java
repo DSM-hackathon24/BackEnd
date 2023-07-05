@@ -33,12 +33,16 @@ public class Map extends BaseEntity {
     @NotBlank
     private String installation;
 
+    @NotBlank
+    private String writer;
+
     @Builder
-    public Map(Double longitude, Double latitude, Boolean availability, String sortation, String installation){
+    public Map(Double longitude, Double latitude, Boolean availability, String sortation, String installation, String  writer){
         this.longitude = longitude;
         this.latitude = latitude;
         this.availability = availability;
         this.sortation = sortation;
         this.installation = installation;
+        this.writer = writer;
     }
 }
