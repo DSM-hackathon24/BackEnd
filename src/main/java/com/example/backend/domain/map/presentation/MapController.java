@@ -1,8 +1,10 @@
 package com.example.backend.domain.map.presentation;
 
 import com.example.backend.domain.map.presentation.dto.request.MapAddRequest;
+import com.example.backend.domain.map.presentation.dto.response.MapAllListResponse;
 import com.example.backend.domain.map.presentation.dto.response.MapListResponse;
 import com.example.backend.domain.map.service.MapAddService;
+import com.example.backend.domain.map.service.MapAllLIstService;
 import com.example.backend.domain.map.service.MapListService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -11,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Tag(name = "Map", description = "Map API 입니다.")
 @RestController
@@ -20,6 +23,7 @@ public class MapController {
 
     private final MapAddService mapAddService;
     private final MapListService mapListService;
+    private final MapAllLIstService mapAllLIstService;
 
     @Operation(summary = "소화전 장소 저장")
     @PostMapping
@@ -32,5 +36,11 @@ public class MapController {
     @GetMapping("/list/{mapId}")
     public MapListResponse mapList(@PathVariable Long mapId){
         return mapListService.mapList(mapId);
+    }
+
+    @Operation(summary = "모든 소화전 장소 조회")
+    @GetMapping("/list/all")
+    private List<MapAllListResponse> mapALlList(){
+        return mapAllLIstService.mapAllList();
     }
 }

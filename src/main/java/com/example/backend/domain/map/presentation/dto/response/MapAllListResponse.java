@@ -5,17 +5,11 @@ import lombok.Getter;
 
 @Builder
 @Getter
-public class MapListResponse {
+public class MapAllListResponse {
+
+    private Long mapId;
 
     private Double longitude;
 
     private Double latitude;
-
-    private Boolean availability;
-
-    private String sortation;
-
-    private String installation;
-
-    private String writer;
 }
