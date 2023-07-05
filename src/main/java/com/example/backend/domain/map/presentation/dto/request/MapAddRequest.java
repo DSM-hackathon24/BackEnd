@@ -19,4 +19,6 @@ public class MapAddRequest {
     private String sortation;
 
     private String installation;
+
+    private String  writer;
 }

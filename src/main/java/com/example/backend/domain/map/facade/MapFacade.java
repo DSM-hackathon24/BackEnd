@@ -13,8 +13,8 @@ public class MapFacade {
 
     private final MapRepository mapRepository;
 
-    public Map getMapById(Long mapId){
-        return mapRepository.findMap(mapId)
+    public Map findMapById(Long mapId){
+        return mapRepository.findMapById(mapId)
                 .orElseThrow(() -> new CustomException(ErrorCode.CODE_NOT_FOUND));
     }
 }

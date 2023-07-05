@@ -26,7 +26,7 @@ public class CommentController {
 
     @Operation(summary = "댓글 생성")
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
+    @PostMapping("/{boardId}")
     public void createComment(@RequestBody CommentAddRequest request, Long boardId){
         createCommentService.commentAdd(request, boardId);
     }
