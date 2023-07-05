@@ -26,8 +26,8 @@ public class CommentController {
 
     @Operation(summary = "댓글 생성")
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/{boardId}")
-    public void createComment(@RequestBody CommentAddRequest request, Long boardId){
+    @PostMapping
+    public void createComment(@RequestBody CommentAddRequest request, @PathVariable Long boardId){
         createCommentService.commentAdd(request, boardId);
     }
 
@@ -38,9 +38,9 @@ public class CommentController {
     }
 
     @Operation(summary = "댓글 조회")
-    @GetMapping("/list")
-    public List<CommentListResponse> listComment(){
-        return listCommentService.commentList();
+    @GetMapping("/{boardId}/list")
+    public List<CommentListResponse> listComment(@PathVariable Long boardId){
+        return listCommentService.commentList(boardId);
     }
 
     @Operation(summary = "댓글 수정")
